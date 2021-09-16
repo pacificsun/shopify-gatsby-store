@@ -14,6 +14,8 @@ const CartContext = React.createContext(defaultState);
 export default CartContext;
 
 export function CartContextProvider({ children }) {
+  // get checkout from local storage if window is not undefined
+
   const [checkout, setCheckout] = useState(
     JSON.parse(
       typeof window !== 'undefined' ? localStorage.getItem('checkout') : null
