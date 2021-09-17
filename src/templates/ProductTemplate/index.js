@@ -92,7 +92,16 @@ export default function ProductTemplate(props) {
                 </SelectWrapper>
               )}
 
-              {!!selectedVariant && <Price>${selectedVariant.price}</Price>}
+              {!!selectedVariant && (
+                <>
+                  {' '}
+                  <Price>${selectedVariant.price}</Price>
+                  <ProductQuantityAdder
+                    available={selectedVariant.available}
+                    variantId={selectedVariant.id}
+                  />
+                </>
+              )}
             </>
           )}
         </div>
